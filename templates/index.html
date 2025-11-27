@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>PyBank</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>PyBank</h2>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/account">My Account</a></li>
+                <li><a href="/login">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <main>
+        <div>
+            <h1 id="heading">Welcome back, {{ username }}</h1>
+            <p id="subheading">PyBank is happy to work with you</p>
+            <br>
+        </div>
+        <h2 id="action-h">Actions</h2>
+        <div id="actions">
+            <div class="action" id="action1">
+                <h3 id="action-h1">Deposit</h3>
+                <p class="sub-action">Deposit a sum of money to your account</p>
+            </div>
+            <div class="action" id="action2">
+                <h3 id="action-h2">Withdraw</h3>
+                <p class="sub-action">Withdraw a sum of money from your account</p>
+            </div>
+            <div class="action" id="action3">
+                <h3 id="action-h3">Details</h3>
+                <p class="sub-action">View your account details and other info</p>
+            </div>
+        </div>
+        <div id="action-btns">
+            <button class="action-btn" id="delete-btn">Delete Account</button>
+            &nbsp;&nbsp;<button class="action-btn" id="create-btn">Create Account</button>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <p>&copy; {{ year }} PyBank -All rights reserved</p>
+        <p>Created by Galen Mike</p>
+    </footer>
+</body>
+</html>
