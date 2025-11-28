@@ -22,6 +22,9 @@ def home():
 def login():
     return render_template('login.html')
 
+@app.route('/account')
+def show_account():
+    return render_template('account.html', username='', balance='')
 
 if __name__ == '__main__':
     app.run(debug=True, host=host, port=port)

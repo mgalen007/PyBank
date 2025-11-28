@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account -PyBank</title>
+    <link rel="stylesheet" type="text/css" href="account.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>PyBank</h2>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/account" id="current-page">My Account</a></li>
+                <li><a href="/login">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <main>
+        <h1 id="heading">My PyBank Account</h1>
+        <div id="account">
+            <div id="acc-details">
+                <fieldset id="details">
+                    <legend>Account Details</legend>
+                    <div id="info">
+                        <p class="detail"><span class="bold">Owner: </span>{{ owner }}</p>
+                        <p class="detail"><span class="bold">Date created: </span>{{ creation_date }}</p>
+                        <p class="detail"><span class="bold">Account type: </span>{{ acc_type }}</p>
+                        <p class="detail"><span class="bold">Current balance: </span>{{ current_balance }}</p>
+                    </div>
+                </fieldset>
+            </div>
+            <br>
+            <div id="acc-transactions">
+                <fieldset id="transactions">
+                    <legend>Transactions</legend>
+                    <div id="operations">
+                        <form action="/transaction" method="POST">
+                            <div>
+                                <label for="deposited" class="bold">Deposit: </label>
+                                <input type="number" name="deposit-amount" id="deposited">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="withdrawn" class="bold">Withdraw: </label>
+                                <input type="number" name="withdraw-amount" id="withdrawn">
+                            </div>
+                        </form>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <p>&copy; {{ year }} PyBank -All rights reserved</p>
+        <p>Created by Galen Mike</p>
+    </footer>
+</body>
+</html>
