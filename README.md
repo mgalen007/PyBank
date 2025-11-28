@@ -15,13 +15,13 @@ It’s built with Flask and provides a minimal front-end (HTML/CSS) to interact 
 
 ## 📂 Repository Structure  
 
-/-PyBank
-   |___app.py
-   |___/templates
-      |___index.html
-      |___login.html
-      |___account.html
-   |___/static
-      |___index.css
-      |___login.css
-      |___account.css
+/-PyBank<br>
+   |___app.py<br>
+   |___/templates<br>
+      |___index.html<br>
+      |___login.html<br>
+      |___account.html<br>
+   |___/static<br>
+      |___index.css<br>
+      |___login.css<br>
+      |___account.css<br>
