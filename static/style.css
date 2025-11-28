@@ -128,3 +128,7 @@ footer{
     padding-left: 2vw;
     padding-right: 2vw;
 }
+
+footer p{
+    color: rgba(0, 0, 0, 0.75);
+}

@@ -1,0 +1,52 @@
+:root{
+    font-family: "Segoe UI";
+    font-size: 1.05em;
+}
+
+#login-card{
+    border: 1.5px solid gray;
+    border-radius: 7.5px;
+    width: fit-content;
+    padding: 0 30px 5vh 30px;
+    margin: 15vh auto 0 auto;
+}
+
+input{
+    padding: 15px;
+    border-radius: 7.5px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    width: 20vw;
+    transform: translateY(5px);
+    font-family: "Segoe UI";
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    width: 22vw;
+    padding: 15px 0 10px 0;
+    margin-top: 10px;
+    border: none;
+    border-radius: 7.5px;
+    color: white;
+    background: black;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+button:hover{
+    background: rgba(0, 0, 0, 0.75);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+}
