@@ -28,7 +28,7 @@
                         <p class="detail"><span class="bold">Owner: </span>{{ owner }}</p>
                         <p class="detail"><span class="bold">Date created: </span>{{ creation_date }}</p>
                         <p class="detail"><span class="bold">Account type: </span>{{ acc_type }}</p>
-                        <p class="detail"><span class="bold">Current balance: </span>{{ current_balance }}</p>
+                        <p class="detail"><span class="bold">Current balance: </span>{{ current_balance }} RWF</p>
                     </div>
                 </fieldset>
             </div>
@@ -41,15 +41,21 @@
                             <div>
                                 <label for="deposited" class="bold">Deposit: </label>
                                 <input type="number" name="deposit-amount" id="deposited">
+                                <button type="submit" class="submit-btn" id="deposit-btn">Deposit</button>
                             </div>
                             <br>
                             <div>
                                 <label for="withdrawn" class="bold">Withdraw: </label>
                                 <input type="number" name="withdraw-amount" id="withdrawn">
+                                <button type="submit" class="submit-btn" id="withdraw-btn">Withdraw</button>
                             </div>
                         </form>
                     </div>
                 </fieldset>
+            </div><br>
+            <div id="action-btns">
+                <button class="action-btn" id="delete-btn">Delete Account</button>
+                &nbsp;&nbsp;<button class="action-btn" id="create-btn">Create Account</button>
             </div>
         </div>
     </main>

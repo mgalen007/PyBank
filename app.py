@@ -24,7 +24,8 @@ def login():
 
 @app.route('/account')
 def show_account():
-    return render_template('account.html', username='', balance='')
+    owner = request.form['username']
+    return render_template('account.html', owner=owner , creation_date='', account_type='', current_balance='')
 
 if __name__ == '__main__':
     app.run(debug=True, host=host, port=port)
