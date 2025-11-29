@@ -12,7 +12,7 @@
             <h1 id="heading">Login to PyBank</h1>
         </div>
         <br>
-        <form action="/home" method="POST">
+        <form action="/auth" method="POST">
             <div id="creds">
                 <div id="username">
                     &nbsp;<label for="username">Username</label>
@@ -26,6 +26,7 @@
                 </div>
                 <br>
                 <button type="submit">Login</button>
+                <p><span id="invalid">{{ failed_msg }}</span></p>
                 <p id="register">Don't have an account yet? <a href="register.html">Register</a> now</p>
             </div>
         </form>

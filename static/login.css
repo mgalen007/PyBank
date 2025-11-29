@@ -50,3 +50,8 @@ a{
 h1{
     text-align: center;
 }
+
+#invalid{
+    font-size: .9rem;
+    color: red;
+}

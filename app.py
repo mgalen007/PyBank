@@ -9,18 +9,31 @@ host = '127.0.0.1'
 port = 8080
 
 @app.route('/')
-def auth():
-    return render_template('login.html')
+def login():
+    return render_template('login.html', failed_msg='')
 
-@app.route('/home', methods=['POST'])
-def home():
-    if request.method == 'POST': 
-        user = request.form['username']
-        return render_template('index.html', username=user, year=current_year)
+@app.route('/auth', methods=['POST'])
+def auth():
+    users = []
+    passwords = []
+    with open('data/users.txt', 'r') as users_file, open('data/passwords.txt') as passwords_file:
+        for user in users_file:
+            users.append(user)
+        for password in passwords_file:
+            passwords.append(password)
+        username = request.form['username']
+        password = request.form['password']
+        if (username in users_file) and (password in passwords_file):
+            if not users.index(username) == passwords.index(password):
+                return render_template('login.html', failed_msg='Invalid username or password!')
+            else:
+                return render_template('index.html', username=username, current_year=time.localtime().tm_year)
+        else:
+            return render_template('login.html', failed_msg='Invalid username or password!')
     
 @app.route('/login')
-def login():
-    return render_template('login.html')
+def signed_out():
+    return render_template('login.html', failed_msg='')
 
 @app.route('/account')
 def show_account():
