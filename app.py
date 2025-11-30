@@ -17,19 +17,23 @@ def auth():
     users = []
     passwords = []
     with open('data/users.txt', 'r') as users_file, open('data/passwords.txt') as passwords_file:
-        for user in users_file:
-            users.append(user)
-        for password in passwords_file:
-            passwords.append(password)
-        username = request.form['username']
-        password = request.form['password']
-        if (username in users_file) and (password in passwords_file):
-            if not users.index(username) == passwords.index(password):
-                return render_template('login.html', failed_msg='Invalid username or password!')
-            else:
-                return render_template('index.html', username=username, current_year=time.localtime().tm_year)
+        users = [user.strip() for user in users_file]
+        print(users)
+        passwords = [password.strip() for password in passwords_file]
+        print(passwords)
+
+    username = request.form['username']
+    password = request.form['password']
+
+    if username in users:
+        index = users.index(username)
+        if passwords[index] == password:
+            return render_template('index.html', username=username, current_year=time.localtime().tm_year)
         else:
-            return render_template('login.html', failed_msg='Invalid username or password!')
+            return render_template('login.html', error_msg='Invalid username or password!')
+    else:
+        return render_template('login.html', error_msg='Invalid username or password!')
+       
     
 @app.route('/login')
 def signed_out():
