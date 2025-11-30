@@ -28,7 +28,7 @@ def auth():
     if username in users:
         index = users.index(username)
         if passwords[index] == password:
-            return render_template('index.html', username=username, current_year=time.localtime().tm_year)
+            return render_template('index.html', username=username, current_year=current_year)
         else:
             return render_template('login.html', error_msg='Invalid username or password!')
     else:
